@@ -1,0 +1,64 @@
+Algorithm
+User is given 3 lives, and 60 seconds
+User presses start, timer begins to count down
+CPU generates random addition or subtraction question
+User is asked to solve question
+If the answer is correct then give the user 100 points
+If it is incorrect user loses 1 life
+Continue generating questions until user has 0 lives left
+Tell user they lost and show final score
+
+If the timer hits 0, the user is sent to the game over screen, regardless of lives
+
+
+Pseudocode
+Int interval, lives = 3, points, answer;
+3 labels, jl, score, time
+1 text field userIn
+2 buttons start & check
+1 timer timer
+
+GameMain(){
+	Declare all the buttons labels and text fields
+	Set their bounds
+	Add them to the program, and make adjustments to the frame itself
+}
+
+Action performed{
+	if(the user presses start){
+		Calls countdown(), and generate the first question
+	}if the user presses check {
+		If user input = answer
+		Then give the user 100 points, reset the text field, and generate another question
+
+		If user input != answer
+		The user loses 1 life, and a new question is generated
+	}
+	If lives = 0 then gameOver
+}
+
+Int Question generation
+Int num1, num2, operation, answer
+Randomly generate values for num1 and num 2 between 1 and 50
+Randomly generate value for operation between 1 and 0
+If operation = 1 then answer = num1 + num2
+Set text of label to num1 “+” num2 = ?
+If operation = 0 then answer = num1 - num2
+Set text of label to num1 “-” num2 = ?
+In both outcomes Return answer
+
+gameOver()
+Remove all elements except jl, 
+jl.setText(Game over, final score (their score));
+
+countdown() {
+Interval  = 60
+Declare interval object
+If interval == 1{ 
+gameOver()
+}
+Interval--
+Set text of timer to the current time
+
+Main method
+Initialises the variable
